@@ -1,0 +1,136 @@
+* {
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 31px;
+    text-align: center;
+    background-image: url(../img/back.png) ;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    color: rgb(249, 247, 247);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 2em;
+    margin-left: 2em;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+.playText {
+    font-size: 18px;
+    text-align: center;
+    text-decoration: dotted;
+    color: rgb(250, 252, 252);
+    font-family: arial;
+    margin-top: 1em;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+.hidden { display: none; }
+
+.animation {
+    width: 555px;
+    margin: 0 auto;
+    border: thin solid black;
+
+    position: relative;
+    overflow: hidden;
+
+    background-color: white;
+}
+
+#layout { position: relative; z-index: 5000; }
+
+.text-fade { animation: fadeWordsIn 0.7s forwards; }
+
+.waiting-intro {
+    position: absolute;
+    margin-top: 240px;
+    margin-left: 10px;
+
+    height: 108px;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+.animate-birds {
+    animation-name: moveBirds;
+}
+
+/* the 'greater than' means a direct descendant of the original container 
+(the element with an id of #firstFive) */
+
+#first-twenty > path { opacity: 0; }
+
+.start-button { 
+    position: absolute;  
+    bottom: 140px;
+    left: 220px;
+    width: 80px;
+
+    cursor: pointer;
+
+    z-index: 5001;
+    transition: ease-in-out;
+}
+
+
+
+/* keyframe animations go here */
+#where { /*animation-duration: 0.5s;*/ animation-delay: 10.0s }
+#will { /*animation-duration: 5.4s;*/  animation-delay: 10.7s }
+#theres { /*animation-duration: 3s;*/ animation-delay: 11.6s }
+#way { /*animation-duration: 6.5s;*/ animation-delay: 11.8s }
+
+/* text animation synced to audio */
+#kind { animation-delay: 12.3s; }
+#beautiful { animation-delay: 12.8s; }
+#and { animation-delay: 13.8s;}
+#night { animation-delay: 14.5s; }
+
+#day { animation-delay: 15.4s; }
+#magical { animation-delay: 16.3s; }
+#if { animation-delay: 17.4s; }
+#love { animation-delay: 18.0s; }
+#life { animation-delay: 18.6s; }
+#can_t { animation-delay: 21.1s; }
+#obstacle { animation-delay: 19.6s; }
+#defeated { animation-delay: 21.1s; }
+
+
+.intro-fade {
+    animation-name: fadeElementOut;
+    animation-fill-mode: forwards;
+}
+
+
+.start { 
+    position: absolute;
+    z-index: 500;
+    bottom: -60px;
+    right: -50px;
+
+    transform: scale(0.7);
+    animation-delay: 2s;
+
+    opacity: 0;
+}
+
+/* generic opacity fade */
+@keyframes fadeElementOut {
+    from { opacity: 1 }
+    to { opacity: 0 }
+}
+
+
+@keyframes fadeWordsIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
